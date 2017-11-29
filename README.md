@@ -12,3 +12,5 @@ Workshopin tarkoituksena on tehdä kevyt tutkimusretki Geographic Information Sy
 Käytämme lähteenämme Maanmittauslaitoksen julkaisemaa vektoripohjaista dataa, tutkitaan
 mitä se on syönyt. Jos ehdimme, toteutetaan sen pohjalle hyvin kevyt kääneteinen
 geokoodaus, jonka avulla syöttämällä koordinaatin saa palautteena lähimmät kadunnimet.
+
+Käynnistä API-palvelin komennolla `gunicorn api.reverse_geocoder:api`
