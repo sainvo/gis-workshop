@@ -6,7 +6,7 @@ import time
 # Not for production use :)
 attempts = 0
 
-while attempts < 3:
+while attempts < 5:
     try:
         connection = psycopg2.connect('host=%(host)s password=%(password)s dbname=%(dbname)s user=%(username)s' % {
                     'host': os.getenv('DB_HOST', 'postgres'),
