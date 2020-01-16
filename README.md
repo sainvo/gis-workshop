@@ -1,5 +1,8 @@
 # Taiste GIS-workshop
 
+- Lataa ja asenna Docker ja Docker Compose
+  (*Windows*: https://docs.docker.com/docker-for-windows/install/
+   *OS X*: https://docs.docker.com/docker-for-mac/install/)
 - Lataa ja asenna QGIS http://qgis.org/
 - Lataa http://kartat.kapsi.fi/files/maastotietokanta/tiesto_osoitteilla/etrs89/shp/L33.shp.zip
 
