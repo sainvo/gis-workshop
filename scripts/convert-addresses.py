@@ -1,11 +1,10 @@
 # Run in QGIS to generate SQL
 
-from StringIO import StringIO
+from io import StringIO
 from binascii import hexlify
-import codecs
+from qgis.utils import iface
 
-layers = QgsMapLayerRegistry.instance().mapLayers().items() # noqa
-turku = layers[0][1]
+turku = iface.activeLayer()
 
 clause = StringIO()
 clause.write("""BEGIN;\n
@@ -20,5 +19,5 @@ for f in turku.getFeatures():
 clause.write(',\n'.join(rows))
 clause.write("; COMMIT")
 
-with codecs.open('/tmp/addresses.sql', 'w', encoding='utf-8') as f:
+with open('/tmp/addresses.sql', 'w', encoding='utf-8') as f:
     f.write(clause.getvalue())
