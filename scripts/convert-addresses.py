@@ -14,7 +14,7 @@ INSERT INTO street (street_name, geometry) VALUES
 rows = []
 for f in turku.getFeatures():
     if f['TEKSTI']:
-        rows.append("\t('%s', ST_GeomFromWKB(decode('%s', 'hex'), 3067))\n" % (f['TEKSTI'].replace("'", "''"), hexlify(f.geometry().asWkb()).upper()))
+        rows.append("\t('%s', ST_GeomFromWKB(decode('%s', 'hex'), 3067))\n" % (f['TEKSTI'].replace("'", "''"), hexlify(f.geometry().asWkb()).upper().decode('utf-8')))
 
 clause.write(',\n'.join(rows))
 clause.write("; COMMIT")
