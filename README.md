@@ -16,3 +16,16 @@ geokoodaus, jonka avulla syöttämällä koordinaatin saa palautteena lähimmät
 Käynnistä ympäristö komennolla
 
 ```docker-compose up```
+
+Suorita seuraava komento datojen latauksen jälkeen
+
+```
+cat /tmp/addresses.sql | docker-compose exec -T postgres bash -c 'PGPASSWORD=gisdemo psql
+-U gisdemo -h localhost'
+```
+
+Ja sitten voit kysellä osoitteita, esimerkiksi
+
+```
+curl http://localhost:8000/lookup\?x\=242786\&y\=6711568
+```
